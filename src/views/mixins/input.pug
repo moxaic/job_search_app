@@ -1,0 +1,6 @@
+mixin input(label, inputAttr, required = true)
+  .input-ctn
+    input.input(required=required)&attributes({ ...inputAttr, ...attributes })
+    if label !== "_"
+      label.placeholder(for=inputAttr.name)= label
+    .bar

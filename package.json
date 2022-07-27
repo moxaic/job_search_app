@@ -1,0 +1,39 @@
+{
+  "name": "job_search-application",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node dist/index.js",
+    "dev": "concurrently -n \"NODEMON,TSC,BROWSER-SYNC\" -k true -c \"green.bold,magenta.bold,blue.bold\" \"nodemon index.ts\" \"npm:watch:ts\" \"npm:watch:client\"",
+    "build": "tsc -p . && cp -r public/assets public/styles dist/public && cp -r src/views dist/src",
+    "watch:client": "browser-sync start --config bs-config.js",
+    "watch:ts": "cd public/scripts && tsc -w",
+    "clean:client": "cd public/scripts && del *.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "express": "^4.18.1",
+    "jsonwebtoken": "^8.5.1",
+    "mysql2": "^2.3.3",
+    "pug": "^3.0.2",
+    "puppeteer": "^15.5.0",
+    "puppeteer-extra": "^3.3.4",
+    "puppeteer-extra-plugin-stealth": "^2.11.0"
+  },
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.3",
+    "@types/express": "^4.17.13",
+    "@types/jsonwebtoken": "^8.5.8",
+    "browser-sync": "^2.27.10",
+    "concurrently": "^7.2.2",
+    "dotenv": "^16.0.1",
+    "nodemon": "^2.0.19",
+    "ts-node": "^10.8.2",
+    "typescript": "^4.7.4"
+  }
+}

@@ -1,0 +1,31 @@
+extends layouts/layout
+include mixins/form
+
+block styles
+  link(href="/styles/register.css" rel="stylesheet")
+
+block scripts
+  script(src="/scripts/auth.js" defer)
+
+block content
+  .page
+    .form-ctn
+      -
+        const formAttr = {
+          action: "/register",
+          method: "post",
+          purpose: "Register"
+        };
+        const fields = [
+          { "First Name": { name: "fname", type: "text", value: fname ? fname : "" }},
+          { "Last name": { name: "lname", type: "text", value: lname ? lname : "" }},
+          { Email: { name: "email", type: "email", value: email ? email : "" }},
+          { Password: { name: "password", type: "password", value: "" }},
+          { "Confirm Password": { name: "password", type: "password", value: "" }}
+        ];
+
+      include components/logo
+      +form(formAttr, fields)
+
+      p Already have an account?
+        a(href="/login") Login

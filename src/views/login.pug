@@ -1,0 +1,29 @@
+extends ./layouts/layout
+include mixins/form
+
+block styles
+  link(href="/styles/register.css" rel="stylesheet")
+
+block scripts
+  script(src="/scripts/auth.js" defer)
+
+block content
+  .login-page
+    .form-ctn
+
+      include components/logo
+      -
+        const formAttr = {
+          action: "/login",
+          method: "post",
+          purpose: "Log in"
+        };
+        const fields = [
+          { "Email": { name: "email", type: "email", value: email ? email : "" }},
+          { Password: { name: "password", type: "password", value:  "" }},
+        ];
+
+      +form(formAttr, fields)
+
+      p Don't have an account?
+        a(href="/register") Register

@@ -1,0 +1,84 @@
+.login-page {
+  margin: 0 1em;
+  width: 100%;
+}
+
+.form-ctn {
+  padding: 2.5rem 2rem;
+}
+
+.form-ctn > .logo {
+  font-size: 1.6em;
+  text-align: center;
+}
+
+.input-ctn {
+  font-size: 1rem;
+  margin: 2rem 0;
+  position: relative;
+}
+
+.placeholder {
+  color: #333;
+  left: 1rem;
+  pointer-events: none;
+  position: absolute;
+  top: 0.8rem;
+  transition: all 200ms ease;
+}
+
+.input {
+  background: inherit;
+  border: none;
+  border-bottom: 1px solid #444;
+  color: #333;
+  font-size: inherit;
+  outline: none;
+  padding: 0.8rem 1rem;
+  width: 100%;
+}
+
+.input:focus ~ .placeholder,
+.input:valid ~ .placeholder,
+.input[name="email"]:invalid:not(.input[value=""]) ~ .placeholder {
+  color: black;
+  font-size: 0.85rem;
+  transform: translateY(-1.8rem);
+}
+
+.bar {
+  position: relative;
+  width: 100%;
+}
+
+.bar::before,
+.bar::after {
+  background-color: mediumturquoise;
+  bottom: 0;
+  content: "";
+  height: 1px;
+  left: 50%;
+  position: absolute;
+  transition: 0.2s ease all;
+  width: 0;
+  z-index: 100;
+}
+
+.bar::before {
+  left: unset;
+  right: 50%;
+}
+
+.input:focus ~ .bar::before,
+.input:focus ~ .bar::after {
+  width: 50%;
+}
+
+.form-ctn p {
+  margin-top: 2em;
+  text-align: center;
+}
+
+.form-ctn > p > a {
+  margin-left: 1ch;
+}

@@ -1,0 +1,9 @@
+mixin form(formAttr, fields)
+  form(action=formAttr.action method=formAttr.method)&attributes(attributes)
+
+    include ./input
+    each field in fields
+      each val, key in field
+        +input(key, val)
+
+    button.btn= formAttr.purpose

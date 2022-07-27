@@ -1,0 +1,26 @@
+doctype html
+html
+  head
+    title= title
+    meta(content="IE-edge" http-equiv="X-UA-Compatible")
+    meta(content="width=device-width, initial-scale=1.0" name="viewport")
+    link(href="https://fonts.googleapis.com" rel="preconnect")
+    link(href="https://fonts.gstatic.com" rel="preconnect" crossorigin)
+    link(href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet")
+    link(href="/styles/globals.css" rel="stylesheet")
+    link(href="/favicon.png" rel="icon" type="image/png" sizes="16x16")
+
+    if stylesheets
+      each stylesheet in stylesheets
+        link(href=`/styles/${stylesheet}.css` rel="stylesheet")
+
+    if scripts
+      each script in scripts
+        script(defer=true src=`/scripts/${script}.js`)
+
+    block styles
+    block scripts
+
+  body
+    .mobile-view
+      block content

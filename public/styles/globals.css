@@ -1,0 +1,53 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 16px;
+}
+
+.logo {
+  color: #222;
+  font-size: 1.5em;
+}
+
+.btn {
+  background-color: rgb(83, 196, 192);
+  border: none;
+  border-radius: 999px;
+  display: block;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1em;
+  font-weight: 500;
+  padding: 0.9rem 3rem;
+  margin: auto;
+}
+
+.btn:hover {
+  background-color: mediumaquamarine;
+}
+
+.mobile-view {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+}
+
+@media screen and (min-width: 500px) {
+  .mobile-view {
+    background-image: url(/background.jpg);
+    background-size: cover;
+  }
+
+  .mobile-view > div {
+    backdrop-filter: blur(8px);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 1px solid #999;
+    border-radius: 8px;
+    width: 500px;
+  }
+}
