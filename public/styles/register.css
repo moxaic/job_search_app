@@ -40,7 +40,8 @@
 
 .input:focus ~ .placeholder,
 .input:valid ~ .placeholder,
-.input[name="email"]:invalid:not(.input[value=""]) ~ .placeholder {
+.input[name='email']:invalid:not(.input[value='']) ~ .placeholder,
+.input[name='cgpa']:invalid ~ .placeholder {
   color: black;
   font-size: 0.85rem;
   transform: translateY(-1.8rem);
@@ -55,7 +56,7 @@
 .bar::after {
   background-color: mediumturquoise;
   bottom: 0;
-  content: "";
+  content: '';
   height: 1px;
   left: 50%;
   position: absolute;

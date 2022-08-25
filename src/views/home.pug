@@ -6,22 +6,12 @@ block styles
 block content
   .home-page
     include components/logo
+    include components/nav
+
     h2 Hi, #{name.split(" ")[0]}👋
     i Company listings for you to check out 👇
-    ul
-      each listing in jobListings
-        li
-          .ctn
-            h4
-              u= listing.company_name
-            p Hiring for
-              b= listing.designation
-            p Who can apply?
-              b= listing.target_audience
-            p Eligibility criteria:
-              b= listing.eligibility_criteria
-            p Location of job:
-              b= listing.job_location
-            p Salary:
-              b #{listing.salary} pa
-            button.btn(id=listing.id) Apply
+
+    if jobListings
+      include components/job_list.pug
+    else
+      p.no-jobs Oops! Looks like we have run out of jobs to show you.

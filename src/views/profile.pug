@@ -1,0 +1,25 @@
+extends layouts/layout
+include mixins/form
+
+block styles
+  link(href="/styles/main.css" rel="stylesheet")
+  link(href="/styles/register.css" rel="stylesheet")
+
+block content
+  .home-page
+    include components/logo
+    include components/nav
+    .update-profile
+      h4 Update your details
+      -
+        const formAttr = {
+          action: "/profile/update",
+          method: "post",
+          purpose: "Update"
+        };
+        const fields = [
+          { "Full Name": { name: "name", required: false, type: "text", value: name ? name : "" }},
+          { CGPA: { name: "cgpa", required: false, type: "number", step: "0.1", value: cgpa ? cgpa : "" }},
+        ];
+
+      +form(formAttr, fields)

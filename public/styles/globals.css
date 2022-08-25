@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 16px;
 }
 
@@ -14,16 +14,26 @@ body {
   font-size: 1.5em;
 }
 
+.nav-bar {
+  margin-bottom: 1.4em;
+}
+
+.nav-bar > ul {
+  display: flex;
+  justify-content: space-between;
+}
+
 .btn {
   background-color: rgb(83, 196, 192);
   border: none;
   border-radius: 999px;
   display: block;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 1em;
   font-weight: 500;
-  padding: 0.9rem 3rem;
   margin: auto;
+  padding: 0.9rem 3rem;
+  width: fit-content;
 }
 
 .btn:hover {

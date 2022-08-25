@@ -1,0 +1,30 @@
+extends layouts/layout
+include mixins/form
+
+block styles
+  link(href="/styles/main.css" rel="stylesheet")
+  link(href="/styles/register.css" rel="stylesheet")
+
+block content
+  .home-page
+    include components/logo
+    include components/nav
+    .filter-search
+      h4 Enter your preferences
+      -
+        const formAttr = {
+          action: "/explore/filter",
+          method: "get",
+          purpose: "Filter"
+        };
+        const fields = [
+          { "Company name": { name: "companyName", required: false, type: "text", value: companyName ? companyName : "" }},
+          { "Job location": { name: "jobLocation", required: false, type: "text", value: jobLocation ? jobLocation : "" }},
+          { Salary: { name: "salary", required: false, type: "number", value: salary ? salary : "" }},
+          { CGPA: { name: "cgpa", required: false, type: "number", value: cgpa ? cgpa : "" }},
+        ];
+
+      +form(formAttr, fields)
+
+      if jobListings
+        include components/job_list.pug
