@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { getMyApplications } from '../controllers/my_applications';
+import { getMyApplications } from '../controllers/myApplications';
 
 const myApplications = Router();
 

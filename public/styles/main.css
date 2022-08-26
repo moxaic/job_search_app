@@ -9,6 +9,10 @@
   text-align: center;
 }
 
+.home-page h2 {
+  margin-bottom: 0.5em;
+}
+
 ul {
   list-style: none;
 }
@@ -42,7 +46,8 @@ ul.listings > li {
 }
 
 .filter-search > h4,
-.update-profile > h4 {
+.update-profile > h4,
+.applied-jobs > h4 {
   text-align: center;
 }
 

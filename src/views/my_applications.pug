@@ -1,0 +1,28 @@
+extends layouts/layout
+include mixins/form
+
+block styles
+  link(href="/styles/main.css" rel="stylesheet")
+  link(href="/styles/register.css" rel="stylesheet")
+
+block content
+  .home-page
+    include components/logo
+    include components/nav
+    .applied-jobs
+      h4 You have filled following applications👇
+      if appliedJobs
+        ul.listings
+          each job in appliedJobs
+            li
+              .ctn
+                h4
+                  u= job.company_name
+                p Applied for
+                  b= job.designation
+                p Location of job:
+                  b= job.job_location
+                p Salary:
+                  b= job.salary
+                p Applied on:
+                  b= job.applied_on

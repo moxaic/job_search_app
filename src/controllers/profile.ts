@@ -26,6 +26,7 @@ export const updateProfile = async (req: Request, res: Res) => {
       query += ` WHERE \`email\` = ?`;
       if (typeof res.user === 'object') values.push(res.user.email);
       await db.execute(query, values);
+      res.redirect('/profile');
     }
   } catch (err) {
     console.error(err);

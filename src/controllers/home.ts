@@ -17,11 +17,15 @@ export const getHome = async (req: Request, res: Res) => {
       'SELECT `id` FROM `users` WHERE `email` = ?',
       [email]
     );
+
     const id = getHexFormat((user as any)[0].id.toString('hex'));
     const [jobListings] = await db.query(
-      `SELECT * FROM jobs WHERE jobs.id NOT IN ( SELECT job_id FROM applications WHERE applications.user_id = ${id} )`
+      `SELECT * FROM jobs WHERE jobs.id NOT IN (
+        SELECT job_id FROM applications WHERE applications.user_id = ${id}
+      )`
     );
     (jobListings as any[]).forEach(job => (job.id = job.id.toString('hex')));
+
     res.render('home', { title: 'Home', name, jobListings });
   } catch (err) {
     console.error(err);

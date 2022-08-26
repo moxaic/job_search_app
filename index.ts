@@ -11,7 +11,7 @@ import profile from './src/routes/profile.routes';
 import register from './src/routes/register.routes';
 import logout from './src/routes/logout.routes';
 import explore from './src/routes/explore.routes';
-import myApplications from './src/routes/my_applications.routes';
+import myApplications from './src/routes/myApplications.routes';
 
 const PORT = process.env.PORT!;
 const app = express();
